@@ -33,9 +33,16 @@ main {
     padding-top: 8px;
     text-align: center;
     border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.todo {
+.area-task {
+    height: 100%;
+}
+
+.to-do {
     background-color: var(--color-1);
 }
 
@@ -45,6 +52,19 @@ main {
 
 .done {
     background-color: var(--color-3);
+}
+
+.item {
+    background-color: #32de32;
+    padding: 4px 0px 4px 0px;
+    border-top: 2px solid var(--text);
+    border-bottom: 2px solid var(--text);
+    margin-top: 8px;
+    cursor: grab;
+}
+
+.item.dragging {
+    opacity: 0.5;
 }
 
 .add-item {
@@ -69,4 +89,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hover {
+    background-color: rgba(0, 0, 0, 0.3);
 }
