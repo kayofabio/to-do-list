@@ -32,6 +32,30 @@ document.querySelectorAll(".submit-item").forEach(btn => {
     });
 });
 
+document.querySelectorAll("input").forEach(input => {
+    input.addEventListener("keydown", (e) => {
+        if (e.key == "Enter") {
+            e.preventDefault();
+            let categoryListId = input.getAttribute("data-category-list");
+
+            let list = document.getElementById(categoryListId);
+
+            let li = document.createElement("li");
+            li.draggable = true;
+            li.classList.add("item");
+            li.textContent = input.value;
+            list.appendChild(li);
+            input.value = "";
+
+            let categoryInputId = input.getAttribute("data-input");
+            let inputToClose = document.getElementById(categoryInputId);
+            inputToClose.close();
+
+            dragAndDropSystem();
+        }
+    });
+});
+
 //remove item
 
 document.querySelector(".remove-item").addEventListener("dragover", dragOverRemove);
