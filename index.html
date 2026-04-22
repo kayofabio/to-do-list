@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="PT-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,90 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header>
         <h1>TO-DO List</h1>
     </header>
     <main>
-        <section class="box-list to-do">
+        <section class="box-list box-to-do">
             <h2>TO-DO</h2>
-            <div class="area-task">
-                <ul>
+            <div class="area-itens">
+                <ul id="to-do-itens" class="list-itens">
                     <li class="item" draggable="true">Fazer lista de compra</li>
                 </ul>
             </div>
-            <button class="add-item">Adicionar tarefa</button>
+
+            <div class="area-btn">
+                <button class="add-item-btn" data-input="to-do-input">Adicionar tarefa</button>
+                <button class="clear-itens-btn" data-category-list="to-do-itens">Limpar tarefas</button>
+            </div>
+
+            <dialog id="to-do-input" class="area-input">
+                <h3 class="input-title">
+                    Adicione tarefa a lista TO-DO
+                </h3>
+                <label>
+                    <input type="text" id="to-do-item" placeholder="Atualiazar curriculo">
+                    <button class="submit-item" data-category-list="to-do-itens" data-task="to-do-item" data-input="to-do-input">Comfirmar</button>
+                </label>
+            </dialog>
         </section>
-        <section class="box-list doing">
+        <section class="box-list box-doing">
             <h2>DOING</h2>
-            <div class="area-task">
-                <ul class="task-list">
+            <div class="area-itens">
+                <ul id="doing-itens" class="list-itens">
                     <li class="item" draggable="true">fazer dever de casa</li>
                     <li class="item" draggable="true">Estudar Inglês</li>
                 </ul>
             </div>
-            <button class="add-item">Adicionar tarefa</button>
-        </section>
-        <section class="box-list done">
-            <h2>DONE</h2>
-            <div class="area-task">
-                <ul></ul>
+
+            <div class="area-btn">
+                <button class="add-item-btn" data-input="doing-input">Adicionar tarefa</button>
+                <button class="clear-itens-btn" data-category-list="doing-itens">limpar tarefas</button>
             </div>
-            <button class="add-item">Adicionar tarefa</button>
+
+            <dialog id="doing-input" class="area-input">
+                <h3 class="input-title">
+                    Adicione tarefa a lista DOING
+                </h3>
+                <label>
+                    <input type="text" id="doing-item" placeholder="Atualiazar curriculo">
+                    <button class="submit-item" data-category-list="doing-itens" data-task="doing-item" data-input="doing-input">Comfirmar</button>
+                </label>
+            </dialog>
+        </section>
+        <section class="box-list box-done">
+            <h2>DONE</h2>
+            <div class="area-itens">
+                <ul id="done-itens" class="list-itens">
+
+                </ul>
+            </div>
+            
+            <div class="area-btn">
+                <button class="add-item-btn" data-input="done-input">Adicionar tarefa</button>
+                <button class="clear-itens-btn" data-category-list="done-itens">Limpar tarefas</button>
+            </div>
+
+            <dialog id="done-input" class="area-input">
+                <h3 class="input-title">
+                    Adicione tarefa a lista DONE
+                </h3>
+                <label>
+                    <input type="text" id="done-item" placeholder="Atualiazar curriculo">
+                    <button class="submit-item" data-category-list="done-itens" data-task="done-item" data-input="done-input">Comfirmar</button>
+                </label>
+            </dialog>
         </section>
     </main>
+    <div class="remove-item">
+        remover item
+    </div>
     <footer>
         Feito por: <a href="https://github.com/kayofabio" target="_blank" rel="noopener noreferrer">Kayo Fabio</a>
     </footer>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
