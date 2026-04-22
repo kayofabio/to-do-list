@@ -17,6 +17,14 @@ document.querySelectorAll(".submit-item").forEach(btn => {
         let task = document.getElementById(taskInput);
         let list = document.getElementById(categoryList);
 
+        let categoryInput = btn.getAttribute("data-input");
+        let input = document.getElementById(categoryInput);
+
+        if (task.value.trim() === "") {
+            input.close();
+            return;
+        }
+
         let li = document.createElement("li");
         li.classList.add("item");
         li.draggable = true;
@@ -24,8 +32,6 @@ document.querySelectorAll(".submit-item").forEach(btn => {
         list.appendChild(li);
         task.value = ""
 
-        let categoryInput = btn.getAttribute("data-input");
-        let input = document.getElementById(categoryInput);
         input.close();
 
         dragAndDropSystem()
@@ -40,6 +46,14 @@ document.querySelectorAll("input").forEach(input => {
 
             let list = document.getElementById(categoryListId);
 
+            let categoryInputId = input.getAttribute("data-input");
+            let inputToClose = document.getElementById(categoryInputId);
+
+            if (input.value.trim() === "") {
+                inputToClose.close();
+                return;
+            }
+
             let li = document.createElement("li");
             li.draggable = true;
             li.classList.add("item");
@@ -47,8 +61,6 @@ document.querySelectorAll("input").forEach(input => {
             list.appendChild(li);
             input.value = "";
 
-            let categoryInputId = input.getAttribute("data-input");
-            let inputToClose = document.getElementById(categoryInputId);
             inputToClose.close();
 
             dragAndDropSystem();
