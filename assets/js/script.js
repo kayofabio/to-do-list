@@ -16,7 +16,7 @@ document.querySelectorAll(".submit-item").forEach(btn => {
 
         let task = document.getElementById(taskInput);
         let list = document.getElementById(categoryList);
-        
+
         let li = document.createElement("li");
         li.classList.add("item");
         li.draggable = true;
@@ -55,13 +55,41 @@ function dropRemove(e) {
 }
 
 // clear itens
-
+let categoryListToclearId = null;
 document.querySelectorAll(".clear-itens-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-        let categoryList = btn.getAttribute("data-category-list");
-        let list = document.getElementById(categoryList);
-        list.replaceChildren();
+        let confirmWindowId = btn.getAttribute("data-confirm");
+        let confirmWindow = document.getElementById(confirmWindowId);
+        confirmWindow.showModal();
+        categoryListToclearId = btn.getAttribute("data-category-list");
     })
+});
+
+document.querySelectorAll(".confirm-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        let response = btn.getAttribute("data-response");
+        let confirmWindowId = btn.getAttribute("data-confirm");
+        let confirmWindow = document.getElementById(confirmWindowId);
+        if (response === "false") {
+            confirmWindow.close();
+            return;
+        }
+        let listToclear = document.getElementById(categoryListToclearId);
+        listToclear.replaceChildren();
+        confirmWindow.close();
+    });
+});
+
+// close windows
+document.querySelectorAll(".close-window-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        let windowId = btn.getAttribute("data-close");
+        let window = document.getElementById(windowId);
+        if (window.querySelector("input")) {
+            window.querySelector("input").value = "";
+        }
+        window.close();
+    });
 });
 
 // drag and drop

@@ -24,16 +24,19 @@
 
             <div class="area-btn">
                 <button class="add-item-btn" data-input="to-do-input">Adicionar tarefa</button>
-                <button class="clear-itens-btn" data-category-list="to-do-itens">Limpar tarefas</button>
+                <button class="clear-itens-btn" data-category-list="to-do-itens" data-confirm="confirm-window">Limpar
+                    tarefas</button>
             </div>
 
             <dialog id="to-do-input" class="area-input">
+                <button class="close-window-btn" data-close="to-do-input">X</button>
                 <h3 class="input-title">
                     Adicione tarefa a lista TO-DO
                 </h3>
                 <label>
                     <input type="text" id="to-do-item" placeholder="Atualiazar curriculo">
-                    <button class="submit-item" data-category-list="to-do-itens" data-task="to-do-item" data-input="to-do-input">Comfirmar</button>
+                    <button class="submit-item" data-category-list="to-do-itens" data-task="to-do-item"
+                        data-input="to-do-input">Comfirmar</button>
                 </label>
             </dialog>
         </section>
@@ -48,16 +51,19 @@
 
             <div class="area-btn">
                 <button class="add-item-btn" data-input="doing-input">Adicionar tarefa</button>
-                <button class="clear-itens-btn" data-category-list="doing-itens">limpar tarefas</button>
+                <button class="clear-itens-btn" data-category-list="doing-itens" data-confirm="confirm-window">limpar
+                    tarefas</button>
             </div>
 
             <dialog id="doing-input" class="area-input">
+                <button class="close-window-btn" data-close="doing-input">X</button>
                 <h3 class="input-title">
                     Adicione tarefa a lista DOING
                 </h3>
                 <label>
                     <input type="text" id="doing-item" placeholder="Atualiazar curriculo">
-                    <button class="submit-item" data-category-list="doing-itens" data-task="doing-item" data-input="doing-input">Comfirmar</button>
+                    <button class="submit-item" data-category-list="doing-itens" data-task="doing-item"
+                        data-input="doing-input">Comfirmar</button>
                 </label>
             </dialog>
         </section>
@@ -68,22 +74,35 @@
 
                 </ul>
             </div>
-            
+
             <div class="area-btn">
                 <button class="add-item-btn" data-input="done-input">Adicionar tarefa</button>
-                <button class="clear-itens-btn" data-category-list="done-itens">Limpar tarefas</button>
+                <button class="clear-itens-btn" data-category-list="done-itens" data-confirm="confirm-window">Limpar
+                    tarefas</button>
             </div>
 
             <dialog id="done-input" class="area-input">
+                <button class="close-window-btn" data-close="done-input">X</button>
                 <h3 class="input-title">
                     Adicione tarefa a lista DONE
                 </h3>
                 <label>
                     <input type="text" id="done-item" placeholder="Atualiazar curriculo">
-                    <button class="submit-item" data-category-list="done-itens" data-task="done-item" data-input="done-input">Comfirmar</button>
+                    <button class="submit-item" data-category-list="done-itens" data-task="done-item"
+                        data-input="done-input">Comfirmar</button>
                 </label>
             </dialog>
         </section>
+        <dialog id="confirm-window" class="area-input">
+            <button class="close-window-btn" data-close="confirm-window">X</button>
+            <h3 class="input-title">
+                Tem certeza que deseja limpar lista de tafera?
+            </h3>
+            <div class="box-confirm-btns">
+                <button class="confirm-btn" data-response="true" data-confirm="confirm-window">Sim</button>
+                <button class="confirm-btn" data-response="false" data-confirm="confirm-window">Não</button>
+            </div>
+        </dialog>
     </main>
     <div class="remove-item">
         remover item
